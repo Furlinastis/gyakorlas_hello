@@ -12,5 +12,7 @@ public class Main {
         String szoveg2;
         szoveg2= "There is another theory which states that this has already happened.";
         System.out.println(szoveg2);
+
+        System.out.println("igazan megcsinalhatnad nem manualisan is kiscsillag...");
     }
 }
