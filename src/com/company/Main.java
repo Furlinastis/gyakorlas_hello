@@ -14,5 +14,7 @@ public class Main {
         System.out.println(szoveg2);
 
         System.out.println("igazan megcsinalhatnad nem manualisan is kiscsillag...");
+
+        System.out.println("ugyesen nezzuk csinalod e igyis");
     }
 }
