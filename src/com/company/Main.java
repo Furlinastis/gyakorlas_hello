@@ -18,5 +18,7 @@ public class Main {
         System.out.println("ugyesen nezzuk csinalod e igyis");
 
         System.out.println("es akkor nezzuk az uj accon is megy-e ...");
+
+        System.out.println("kezdjelmarmagaddalvalamit");
     }
 }
