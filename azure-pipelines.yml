@@ -10,12 +10,21 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+
+  - script: |
+      pwd
+      ls -la /home/vsts/work/1/s
+      node --version
+    displayName: 'npm install and build'
+
   - task: NodeTool@0
     inputs:
       versionSpec: '10.x'
     displayName: 'Install Node.js'
 
   - script: |
+      pwd
       npm install
       npm run build
     displayName: 'npm install and build'
