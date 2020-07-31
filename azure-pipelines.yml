@@ -20,16 +20,9 @@ steps:
       ls -la /home/vsts/work/1/s/Build
     displayName: 'npm install and build'
 
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '10.x'
-    displayName: 'Install Node.js'
-
   - script: |
-      pwd
-      npm install
-      npm run build
-    displayName: 'npm install and build'
+      java ./Build/com/company/Main
+    displayName: 'Run Code'
 
   - task: CopyFiles@2
     inputs:
