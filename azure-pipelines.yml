@@ -15,7 +15,9 @@ steps:
   - script: |
       pwd
       ls -la /home/vsts/work/1/s
-      javac --version
+      mkdir Build
+      javac ./src/com/company/Main.java -d ./Build
+      ls -la /home/vsts/work/1/s/Build
     displayName: 'npm install and build'
 
   - task: NodeTool@0
