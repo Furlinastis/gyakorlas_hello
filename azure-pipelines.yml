@@ -22,7 +22,7 @@ steps:
     displayName: 'npm install and build'
 
   - script: |
-      cd ./Build/com/company
+      cd /home/vsts/work/1/s/Build/com/company/
       java Main
     displayName: 'Run Code'
 
