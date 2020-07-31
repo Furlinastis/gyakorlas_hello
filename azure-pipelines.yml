@@ -19,6 +19,8 @@ steps:
       javac ./src/com/company/Main.java -d ./Build
       ls -la /home/vsts/work/1/s/Build/com
       ls -la /home/vsts/work/1/s/Build/com/company/
+      cd /home/vsts/work/1/s/Build/com/company/
+      java Main
     displayName: 'npm install and build'
 
   - script: |
