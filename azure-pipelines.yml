@@ -22,7 +22,8 @@ steps:
     displayName: 'npm install and build'
 
   - script: |
-      java ./Build/com/company/Main
+      cd ./Build/com/company
+      java Main
     displayName: 'Run Code'
 
   - task: CopyFiles@2
