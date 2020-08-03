@@ -20,7 +20,7 @@ steps:
       ls -la /home/vsts/work/1/s/Build/com
       ls -la /home/vsts/work/1/s/Build/com/company/
       cd /home/vsts/work/1/s/Build/com/company/
-      java --verbose Main
+      java Main --verbose 
     displayName: 'install and build'
 
   - script: |
