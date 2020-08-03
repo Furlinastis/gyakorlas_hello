@@ -24,7 +24,7 @@ steps:
 
   - script: |
       cd /home/vsts/work/1/s/Build/com/company/
-      java Main --verbose -cp ./
+      java -verbose -cp ./ Main
     displayName: 'Run Code'
 
   - task: CopyFiles@2
