@@ -20,8 +20,8 @@ steps:
       ls -la /home/vsts/work/1/s/Build/com
       ls -la /home/vsts/work/1/s/Build/com/company/
       cd /home/vsts/work/1/s/Build/com/company/
-      java Main
-    displayName: 'npm install and build'
+      java --verbose Main
+    displayName: 'install and build'
 
   - script: |
       cd /home/vsts/work/1/s/Build/com/company/
