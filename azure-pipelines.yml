@@ -20,12 +20,11 @@ steps:
       ls -la /home/vsts/work/1/s/Build/com
       ls -la /home/vsts/work/1/s/Build/com/company/
       cd /home/vsts/work/1/s/Build/com/company/
-      java Main --verbose 
     displayName: 'install and build'
 
   - script: |
       cd /home/vsts/work/1/s/Build/com/company/
-      java Main
+      java Main --verbose -cp ./
     displayName: 'Run Code'
 
   - task: CopyFiles@2
