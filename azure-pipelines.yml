@@ -13,6 +13,7 @@ steps:
 
 
   - script: |
+      env 
       pwd
       ls -la /home/vsts/work/1/s
       mkdir Build
