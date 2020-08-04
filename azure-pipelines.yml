@@ -13,7 +13,8 @@ steps:
 
   - script: |
       javac ./src/com/company/Main.java -d $(Build.ArtifactStagingDirectory)
-    displayName: 'Build'
+      jar -cvf Hello.war $(Build.ArtifactStagingDirectory)
+    displayName: 'Build and war'
 
   - script: |
       cd $(Build.ArtifactStagingDirectory)
