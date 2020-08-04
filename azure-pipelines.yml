@@ -19,7 +19,7 @@ steps:
       java com.company.Main
     displayName: 'Run Code'
 
-  - task: PublishBuildArtifacts@1
+  - task: PublishBuildArtifacts
      inputs:
       pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
       ArtifactName: 'www' # output artifact named www
