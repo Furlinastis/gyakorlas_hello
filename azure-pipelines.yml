@@ -3,23 +3,41 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
 trigger:
   - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+vmImage: 'ubuntu-latest'
 
 steps:
-  - script: |
-      javac ./src/com/company/Main.java -d $(Build.ArtifactStagingDirectory)
-    displayName: 'Build'
+
 
   - script: |
-      cd $(Build.ArtifactStagingDirectory)
-      java com.company.Main
-    displayName: 'Run Code'
 
-  - task: PublishBuildArtifacts
-     inputs:
-      pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
-      ArtifactName: 'www' # output artifact named www
+  env
+  pwd
+  ls -la /home/vsts/work/1/s
+  mkdir Build
+  javac ./src/com/company/Main.java -d $(Build.ArtifactStagingDirectory)
+  ls -la /home/vsts/work/1/a
+displayName: 'install and build'
+
+  - script: |
+  cd $(Build.ArtifactStagingDirectory)
+  java com.company.Main
+displayName: 'Run Code'
+
+  - task: CopyFiles@2
+inputs:
+Contents: 'build/**' # Pull the build directory (React)
+TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: PublishBuildArtifacts@1
+inputs:
+pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
+ArtifactName: 'www' # output artifact named www
