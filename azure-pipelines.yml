@@ -13,18 +13,17 @@ steps:
 
 
   - script: |
+    
       env 
       pwd
       ls -la /home/vsts/work/1/s
       mkdir Build
-      javac ./src/com/company/Main.java -d ./Build
-      ls -la /home/vsts/work/1/s/Build/com
-      ls -la /home/vsts/work/1/s/Build/com/company/
-      cd /home/vsts/work/1/s/Build/com/company/
+      javac ./src/com/company/Main.java -d $(Build.ArtifactStagingDirectory)
+      ls -la /home/vsts/work/1/a
     displayName: 'install and build'
 
   - script: |
-      cd /home/vsts/work/1/s/Build/
+      cd $(Build.ArtifactStagingDirectory)
       java com.company.Main
     displayName: 'Run Code'
 
