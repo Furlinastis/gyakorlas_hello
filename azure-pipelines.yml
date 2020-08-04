@@ -12,13 +12,13 @@ pool:
 steps:
 
   - script: |
-      javac ./src/com/company/Main.java -d $(Build.ArtifactStagingDirectory)
-      jar -cvf Hello.war $(Build.ArtifactStagingDirectory)
-     
+      javac ./src/com/company/Main.java -d ./Build
+      jar -cvf $(Build.ArtifactStagingDirectory)/Hello.war ./Build/*
+      pwd
     displayName: 'Build and war'
 
   - script: |
-      cd $(Build.ArtifactStagingDirectory)
+      cd ./Build
       java com.company.Main
     displayName: 'Run Code'
 
